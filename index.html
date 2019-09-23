@@ -133,51 +133,17 @@
 							<h2 class="major">Contáctanos</h2>
 							<a name="contact"></a>
 							<p>Crezcamos juntos, haznos tu mejor aliado.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Nombre</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">COrreo electrónico</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Mensaje</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Enviar Mensaje"/></li>
-								</ul>
+							<form>
+								<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScicCimr1i4YHb5icte53d1ID7qTWS5YaG-ZyrkDbSJLdho7w/viewform?embedded=true" 
+								width="100%" height="846" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
 							</form>
-							<?php
-								if (isset($_POST['nombre']) && !empty($_POST['nombre'])){
-									$nombre = addslashes($_POST['nombre']);
-									$email = addslashes($_POST['email']);
-									$msg = addslashes($_POST['msg']);
-									
-									$para = "somarribasaul@gmail.com";
-									$asunto = "Mensaje Sitio Web Ampersom";
-									$cuerpo = "Nombre: ".$nombre."  E-mail: ".$email."  Mensaje: ".$msg;
-									
-									$encabezado = "From: ampersom@gmail.com"."\r\n".
-												"Replay-To: ".$email."\r\n".
-												"X-Mailer: PHP/".phpversion();
-									
-									mail($para, $asunto, $cuerpo, $encabezado);
-									echo "<h5>Mensaje enviado con éxito</h5>";
-									exit;
-								}
-							?>
 							<ul class="contact">
-								<li class="fa-home">
-									Ampersom<br />
-									Startup Nicaragua<br />
-								</li>
-								<li class="fa-phone">(+505) 8799 6201</li>
 								<li class="fa-envelope"><a href="mailto:ampersom@gmail.com">ampersom@gmail.com</a></li>
+								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/Ampersom</a></li>
+								<li class="icon brands fa-twitter"><a href="#">twitter.com/Ampersom</a></li>
+								<li class="icon brands fa-instagram"><a href="#">instagram.com/Ampersom</a></li>
+								<li class="fa-phone"><a href="https://wa.me/50577613060">(+505) 7761 3060 (Whatsapp)</a></li>
+								
 							</ul>
 							<ul class="copyright">
 								<li>AMPERSOM | All rights reserved.</li>
