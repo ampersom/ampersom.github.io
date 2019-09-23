@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>ACOPLEX</title>
+		<title>AMPERSOM</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description"
@@ -16,7 +16,7 @@
 			<div id="page-wrapper">
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">ACOPLEX</a></h1>
+						<h1><a href="index.html">AMPERSOM</a></h1>
 						<nav>
 							<a href="#menu">SERVICIOS</a>
 						</nav>
@@ -41,7 +41,7 @@
 				<section id="banner">
 						<div class="inner">
 							<div class="logo" href="images/favico.ico"><span class="icon fa-handshake-o"></span></div>
-							<h2>Acoplex</h2>
+							<h2>Ampersom</h2>
 							<p>El mejor aliado que tu empresa pueda tener</p>
 						</div>
 					</section>
@@ -134,19 +134,53 @@
 							<a name="contact"></a>
 							<p>Crezcamos juntos, haznos tu mejor aliado.</p>
 							<form method="post" action="#">
-							<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScicCimr1i4YHb5icte53d1ID7qTWS5YaG-ZyrkDbSJLdho7w/viewform?embedded=true" 
-							width="100%" height="846" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
-						</form>
+								<div class="fields">
+									<div class="field">
+										<label for="name">Nombre</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">COrreo electrónico</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Mensaje</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Enviar Mensaje"/></li>
+								</ul>
+							</form>
+							<?php
+								if (isset($_POST['nombre']) && !empty($_POST['nombre'])){
+									$nombre = addslashes($_POST['nombre']);
+									$email = addslashes($_POST['email']);
+									$msg = addslashes($_POST['msg']);
+									
+									$para = "somarribasaul@gmail.com";
+									$asunto = "Mensaje Sitio Web Ampersom";
+									$cuerpo = "Nombre: ".$nombre."  E-mail: ".$email."  Mensaje: ".$msg;
+									
+									$encabezado = "From: ampersom@gmail.com"."\r\n".
+												"Replay-To: ".$email."\r\n".
+												"X-Mailer: PHP/".phpversion();
+									
+									mail($para, $asunto, $cuerpo, $encabezado);
+									echo "<h5>Mensaje enviado con éxito</h5>";
+									exit;
+								}
+							?>
 							<ul class="contact">
 								<li class="fa-home">
-									Acoplex<br />
+									Ampersom<br />
 									Startup Nicaragua<br />
 								</li>
-								<li class="fa-phone">(+505) 8787 9271</li>
-								<li class="fa-envelope"><a href="mailto:acoplextechnologies@gmail.com">acoplextechnologies@gmail.com</a></li>
+								<li class="fa-phone">(+505) 8799 6201</li>
+								<li class="fa-envelope"><a href="mailto:ampersom@gmail.com">ampersom@gmail.com</a></li>
 							</ul>
 							<ul class="copyright">
-								<li>ACOPLEX | All rights reserved.</li>
+								<li>AMPERSOM | All rights reserved.</li>
 							</ul>
 						</div>
 					</section>
